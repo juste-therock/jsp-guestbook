@@ -1,0 +1,204 @@
+header, section, footer, aside, nav, article, figure, figcaption {
+	display: block;
+}
+
+body {
+	background-color: rgba(233, 224, 254, 1);
+}
+
+div.wrapper {
+	width: 940px;
+	margin: 0px auto 15px auto;
+	border: 0px liquid;
+	background-color: hsla(170, 85%, 98%, 0.8);
+}
+
+header {
+	height: 154px;
+	width: 940px;
+}
+
+div.container {
+	height: 120px;
+	background-image: url("../media/background.png");
+}
+
+section {
+	border: 0px liquid;
+}
+header h2 {
+	position: center;
+	font-family: Calibri;
+	font-style: italic;
+	font-size: 26px;
+	width: 835px;
+	margin-top: 0px;
+	color: white;
+	border: 0px liquid;
+	padding: 6px 6px;
+	text-align: center;
+	letter-spacing: 0.12em;
+}
+
+h4 {
+	position: center;
+	font-style: calibri;
+	color:green ;
+	border: 0px liquid;
+	text-align: center;
+}
+
+h4.ol a {
+	color: olive;
+}
+
+p {
+	padding: 5px;
+}
+h4.ref {
+	background: white;
+	color: olive;
+	font-family: Calibri;
+	letter-spacing: 0.1em;
+	height: 25px;
+	padding: 3px;
+	margin-left: 5px;
+	border-radius:5px; 
+	width: 200px;
+	margin-top: 0px;
+}
+h3 {
+	position: center;
+	font-family: Comic Sans MS;
+	color: silver;
+	border: 0px liquid;
+	text-align: center;
+}
+nav, footer {
+	clear: both;
+	width: 940px;
+	color: #ffffff;
+}
+
+footer {
+	padding-top: 5px;
+	text-align: center;
+	height: 32px;
+	font-family: Comic Sans MS;
+	background-image:  url("../media/greenslate_backgroundOVER.gif");
+}
+
+nav {
+	height: 40px;
+	background-image: url("../media/greenslate_backgroundOVER.gif");
+}
+
+nav ul {
+	margin: 0px;
+	padding: 5px 0px 5px 20px;
+}
+
+nav li {
+	display: inline;
+	margin-right: 20px;
+}
+
+ul.page li {
+	display: inline;
+	margin-left: 230px;
+	text-decoration: none;
+}
+
+nav li a {
+	font-family: Comic Sans MS;
+	text-decoration: none;
+	padding: 20px 0px 0px 0px;
+	letter-spacing: 0.15em;
+	color: white;
+}
+
+p.bl {
+	color: navy;
+}
+
+p.msg {
+	background-color: white;
+	width: 800px;
+}
+nav li a:hover {
+	color: green;
+}
+
+/*nav li a:visited {
+	color: silver;
+	text-decoration: none;
+}*/
+
+a:active {
+	color: blue;
+}
+
+ul {
+	text-align: left;
+	border-top: 0px liquid;
+}
+
+fieldset {
+	width: 920px;
+	height: 450px;
+	border: 0px white liquid;
+}
+
+
+textarea {
+	Width:450px;
+	height: 120px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px gray liqid;
+}
+
+form {
+	border: 0px silver liquid;
+	margin-top: -5px;
+}
+table.fo {
+	border-collapse: collapse;
+	margin-left: 55px;
+	margin-top: 15px;
+	border: 0px liquid;
+	width: 800px;
+	height: 420px;
+}
+
+td {
+	font-family: Auto;
+	font-size: 16px;
+	border-collapse: collapse;
+	color: navy;
+	padding: 2px;
+}
+
+tr {
+	background-color: white;
+	height: 30px;
+	font-size: 15px;
+}
+
+tr.rech {
+	background-color: #2f2f2f;
+}
+input.searchsubmit{
+	margin-left: 600px;
+	border: 1px solid blue;
+	color: olive;
+	font-size: 15px;
+}
+button.sub {
+	visibility: hidden;
+}
+
+aside.rech {
+	margin-left: 0px;
+}
