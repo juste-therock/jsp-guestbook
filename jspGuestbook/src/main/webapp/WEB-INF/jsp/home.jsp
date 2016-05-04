@@ -1,11 +1,36 @@
-<%@ include file="header.jsp" %>
+<%@ page import="java.util.*"%>
+<%@ taglib
+	uri="http://www.springframework.org/spring-social/facebook/tags"
+	prefix="facebook"%>
+<facebook:init appId="@facebookProvider.appId" />
+<%@ include file="header.jsp"%>
 <body>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '1006937109382101',
+				xfbml : true,
+				version : 'v2.6'
+			});
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 	<div class="wrapper">
 		<header>
-				<%@ include file="banner.jsp" %>
+			<%@ include file="banner.jsp"%>
 		</header>
 		<section>
-			<%@ include file="searchForm.jsp" %>
+			<%@ include file="searchForm.jsp"%>
 			<br />
 			<p style="color: olive; text-align: center">
 				Today's date:
@@ -29,6 +54,14 @@
 				out.println("<h5 style=\"color: green; text-align: center\">Your IP address is " + request.getRemoteAddr()
 						+ "<h5>");
 			%>
-			<br /> <br /> <br /> <br /> <br />
+			<br />
+			<form id="fb_signin" action="<c:url value="/signin/facebook"/>"
+				method="POST">
+				<div id="fb-root"></div>
+				<p>
+					<fb:login-button onlogin="$('#fb_signin').submit();" v="2.0.3"
+						length="long">Signin with Facebook</fb:login-button>
+				</p>
+			</form>
 		</section>
-		<%@ include file="footer.jsp" %></div>
+		<%@ include file="footer.jsp"%></div>
