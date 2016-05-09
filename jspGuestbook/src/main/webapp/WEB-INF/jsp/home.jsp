@@ -33,7 +33,7 @@
 			<%@ include file="searchForm.jsp"%>
 			<br />
 			<p style="color: olive; text-align: center">
-				Today's date:
+				Today's date is:
 				<%=(new java.util.Date()).toString()%>
 			</p>
 			<jsp:useBean id="clock" class="java.util.Date" />
