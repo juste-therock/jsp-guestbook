@@ -1,8 +1,4 @@
 <%@ page import="java.util.*"%>
-<%@ taglib
-	uri="http://www.springframework.org/spring-social/facebook/tags"
-	prefix="facebook"%>
-<facebook:init appId="@facebookProvider.appId" />
 <%@ include file="header.jsp"%>
 <body>
 	<script>
@@ -55,13 +51,6 @@
 						+ "<h5>");
 			%>
 			<br />
-			<form id="fb_signin" action="<c:url value="/signin/facebook"/>"
-				method="POST">
-				<div id="fb-root"></div>
-				<p>
-					<fb:login-button onlogin="$('#fb_signin').submit();" v="2.0.3"
-						length="long">Signin with Facebook</fb:login-button>
-				</p>
-			</form>
+
 		</section>
 		<%@ include file="footer.jsp"%></div>
