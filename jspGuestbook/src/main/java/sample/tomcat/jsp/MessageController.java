@@ -16,11 +16,9 @@
 
 package sample.tomcat.jsp;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -50,11 +48,6 @@ final class MessageController extends WebMvcConfigurerAdapter {
     }
 	public static final int DEFAULT_PAGE_SIZE = 10;
 	static final Logger logger = LoggerFactory.getLogger(MessageController.class);
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public void welcome(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.sendRedirect("login");
-	}
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	@ModelAttribute
