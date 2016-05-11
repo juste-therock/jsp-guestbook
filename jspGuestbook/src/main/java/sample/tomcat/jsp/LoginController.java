@@ -17,7 +17,7 @@ public class LoginController {
         return "login";
     }
  
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String submit(ModelMap modelMap, @ModelAttribute("loginModel") @Valid LoginModel loginModel) {
         System.out.println("in submit" + loginModel);
         String password = loginModel.getPassword();
