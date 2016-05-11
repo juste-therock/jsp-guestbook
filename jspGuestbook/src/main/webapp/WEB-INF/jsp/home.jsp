@@ -1,7 +1,7 @@
 <%@ page import="java.util.*"%>
 <%@ include file="header.jsp"%>
 <body>
-	<script>
+	<!-- <script>
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId : '1006937109382101',
@@ -21,7 +21,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="wrapper">
+ -->	<div class="wrapper">
 		<header>
 			<%@ include file="banner.jsp"%>
 		</header>
