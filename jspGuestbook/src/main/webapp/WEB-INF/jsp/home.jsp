@@ -51,6 +51,8 @@
 						+ "<h5>");
 			%>
 			<br />
-
+			<h1 style="color:green">Hello </h1>
+                <h1 style="color:royalblue">${userInfo} ,</h1> <h1 style="color:green">welcome to Rocca's World !</h1>
+    
 		</section>
 		<%@ include file="footer.jsp"%></div>
