@@ -14,19 +14,19 @@ public class LoginController {
 	@RequestMapping(method = RequestMethod.GET)
     public String init(ModelMap modelMap) {
         modelMap.put("info", "Hello User");
-        return "Login";
+        return "login";
     }
  
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String submit(ModelMap modelMap, @ModelAttribute("loginModel") @Valid LoginModel loginModel) {
         System.out.println("in submit" + loginModel);
         String password = loginModel.getPassword();
         if (password != null && password.equals("onlinetutorialspoint")) {
             modelMap.put("userInfo", loginModel.getUserName());
-            return "Home";
+            return "home";
         } else {
             modelMap.put("error", "Invalid UserName / Password");
-            return "Login";
+            return "login";
         }
  
     }

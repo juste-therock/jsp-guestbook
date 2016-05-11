@@ -53,7 +53,7 @@ final class MessageController extends WebMvcConfigurerAdapter {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public void welcome(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.sendRedirect("home");
+		response.sendRedirect("login");
 	}
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)

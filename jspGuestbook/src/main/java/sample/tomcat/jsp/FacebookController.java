@@ -1,4 +1,4 @@
-package sample.tomcat.jsp;
+/*package sample.tomcat.jsp;
 
 import javax.inject.Inject;
 
@@ -30,3 +30,4 @@ private Facebook facebook;
     }
 
 }
+*/
