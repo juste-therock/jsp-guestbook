@@ -49,12 +49,6 @@ final class MessageController extends WebMvcConfigurerAdapter {
 	public static final int DEFAULT_PAGE_SIZE = 10;
 	static final Logger logger = LoggerFactory.getLogger(MessageController.class);
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	@ModelAttribute
-	public String HomeSweetHome(@ModelAttribute("research") Research research) {
-		return "home";
-	}
-
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	@ModelAttribute
 	public String showForm(@ModelAttribute("message") Message message, Research research, HttpServletRequest request) {

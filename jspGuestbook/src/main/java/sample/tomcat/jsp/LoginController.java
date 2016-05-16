@@ -16,31 +16,35 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @RestController
-@RequestMapping("login.jsp")
 final class LoginController extends WebMvcConfigurerAdapter {
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public void welcome(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.sendRedirect("login");
 	}
+
 	static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-	@RequestMapping(method = RequestMethod.GET)
-    public String init(ModelMap modelMap) {
-        modelMap.put("info", "Hello User");
-        return "login";
-    }
- 
-    @RequestMapping(method = RequestMethod.POST)
-    public String submit(ModelMap modelMap, @ModelAttribute("loginModel") @Valid LoginModel loginModel) {
-        System.out.println("in submit" + loginModel);
-        String password = loginModel.getPassword();
-        if (password != null && password.equals("onlinetutorialspoint")) {
-            modelMap.put("userInfo", loginModel.getUserName());
-            return "home";
-        } else {
-            modelMap.put("error", "Invalid UserName / Password");
-            return "login";
-        }
- 
-    }
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@ModelAttribute
+	public String loginForm(ModelMap modelMap, LoginModel loginModel) {
+		modelMap.put("info", "Hello User");
+		return "login";
+	}
+
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@ModelAttribute
+	public String submit(ModelMap modelMap, @ModelAttribute("loginModel") @Valid LoginModel loginModel, Message message,
+			Research research) {
+		System.out.println("in submit" + loginModel);
+		String password = loginModel.getPassword();
+		if (password != null && password.equals("onlinetutorialspoint")) {
+			modelMap.put("userInfo", loginModel.getUserName());
+			return "home";
+		} else {
+			modelMap.put("error", "Invalid UserName / Password");
+			return "loginForm";
+		}
+
+	}
 }
