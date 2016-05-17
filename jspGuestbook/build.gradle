@@ -39,7 +39,6 @@ repositories {
 }
 
 dependencies {
-	//compile("org.springframework.boot:spring-boot-starter-social-facebook")
 	compile 'org.springframework.social:spring-social-facebook:2.0.3.RELEASE'
     compile 'org.apache.tomcat.embed:tomcat-embed-jasper:8.0.28'
     compile 'javax.servlet:jstl:1.2'

@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
@@ -32,7 +30,7 @@ final class LoginController extends WebMvcConfigurerAdapter {
 		return "login";
 	}
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	@ModelAttribute
 	public String submit(ModelMap modelMap, @ModelAttribute("loginModel") @Valid LoginModel loginModel, Message message,
 			Research research) {
@@ -46,5 +44,5 @@ final class LoginController extends WebMvcConfigurerAdapter {
 			return "loginForm";
 		}
 
-	}
+	}*/
 }
