@@ -92,13 +92,7 @@
 			<div style="color: red">${error}</div>
 		</form:form>
  	<br />
- 	<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-<!--
+ <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
@@ -106,7 +100,13 @@
  <h4>Or Login with your facebook account</h4>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-
+<br />
+	<!-- <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div> -->
 <div id="status">
 </div>
 
