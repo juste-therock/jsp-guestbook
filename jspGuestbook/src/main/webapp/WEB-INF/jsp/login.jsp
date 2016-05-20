@@ -12,7 +12,7 @@
 <title>Juste's first Java web Application</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="740725209526-sl52fv62phe2i9cac13e51drq86qddih.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 <link href="<c:url value="../../css/mystyle.css" />" rel="stylesheet"
 	media="all">
@@ -116,7 +116,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
- <h4>Or Login with a social account</h4>
+ <h4>Or Log in with a social account</h4>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 <br />
