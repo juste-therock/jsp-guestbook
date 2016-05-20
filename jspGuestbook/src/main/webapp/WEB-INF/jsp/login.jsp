@@ -1,5 +1,24 @@
-<%-- <%@ page import="java.util.*"%> --%>
-<%@ include file="header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<jsp:useBean id="message" class="sample.tomcat.jsp.Message"
+	scope="request" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Juste's first Java web Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+<link href="<c:url value="../../css/mystyle.css" />" rel="stylesheet"
+	media="all">
+<link href="<c:url value="../../css/bootstrap.min.css" />"
+	rel="stylesheet" media="all">
+</head>
 <body>
 	<script>
   window.fbAsyncInit = function() {
@@ -97,7 +116,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
- <h4>Or Login with your facebook account</h4>
+ <h4>Or Login with a social account</h4>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 <br />
@@ -109,6 +128,23 @@
 </div> -->
 <div id="status">
 </div>
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
 
  	<section>
 			<br />
