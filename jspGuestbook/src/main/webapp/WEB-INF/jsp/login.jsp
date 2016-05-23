@@ -14,7 +14,7 @@
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id"
 	content="740725209526-sl52fv62phe2i9cac13e51drq86qddih.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <link href="<c:url value="../../css/mystyle.css" />" rel="stylesheet"
 	media="all">
 <link href="<c:url value="../../css/bootstrap.min.css" />"
@@ -127,6 +127,23 @@
 				var id_token = googleUser.getAuthResponse().id_token;
 				console.log("ID Token: " + id_token);
 			};
+			 function onSuccess(googleUser) {
+			      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+			    }
+			    function onFailure(error) {
+			      console.log(error);
+			    }
+			    function renderButton() {
+			      gapi.signin2.render('my-signin2', {
+			        'scope': 'profile email',
+			        'width': 240,
+			        'height': 50,
+			        'longtitle': true,
+			        'theme': 'dark',
+			        'onsuccess': onSuccess,
+			        'onfailure': onFailure
+			      });
+			    }
 		</script>
 		<br /> <a href="#" onclick="signOut();">Sign out</a>
 		<script>
