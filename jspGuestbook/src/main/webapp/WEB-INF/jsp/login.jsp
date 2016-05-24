@@ -14,7 +14,34 @@
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id"
 	content="740725209526-sl52fv62phe2i9cac13e51drq86qddih.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton"
+	async defer></script>
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 77b18sw80nuhlt
+    onLoad: OnLinkedInFrameworkLoad
+    authorize: true
+    lang: EN_US
+</script>   
+<script>
+    function OnLinkedInFrameworkLoad() {
+    	  IN.Event.on(IN, "auth", OnLinkedInAuth);
+    	}
+    
+    function OnLinkedInAuth() {
+        IN.API.Profile("me").result(ShowProfileData);
+    }
+    
+    function ShowProfileData(profiles) {
+        var member = profiles.values[0];
+        var id=member.id;
+        var firstName=member.firstName; 
+        var lastName=member.lastName; 
+        var photo=member.pictureUrl; 
+        var headline=member.headline; 
+
+        //use information captured above
+    }
+</script>
 <link href="<c:url value="../../css/mystyle.css" />" rel="stylesheet"
 	media="all">
 <link href="<c:url value="../../css/bootstrap.min.css" />"
@@ -113,7 +140,7 @@
 		<div id="status"></div>
 		<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 		<script>
-			function onSignIn(googleUser) {
+			/* function onSignIn(googleUser) {
 				// Useful data for your client-side scripts:
 				var profile = googleUser.getBasicProfile();
 				console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -126,8 +153,8 @@
 				// The ID token you need to pass to your backend:
 				var id_token = googleUser.getAuthResponse().id_token;
 				console.log("ID Token: " + id_token);
-			};
-			 function onSuccess(googleUser) {
+			}
+ */			 function onSuccess(googleUser) {
 			      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
 			    }
 			    function onFailure(error) {
@@ -154,6 +181,15 @@
 				});
 			}
 		</script>
+		<script>
+		IN.API.Raw(http://localhost:8080).method(methodType).body(bodyContent).result(resultCallback);
+		IN.User.authorize(callbackFunction, callbackScope);
+		IN.User.logout(callbackFunction, callbackScope);
+		</script>
+		<br />
+		<script type="in/Login">
+     		 Hello, <?js= firstName ?> <?js= lastName ?>.
+       </script>
 		<section>
 			<br />
 		</section>
