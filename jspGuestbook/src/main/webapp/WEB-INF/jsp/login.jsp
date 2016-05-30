@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<jsp:useBean id="message" class="sample.tomcat.jsp.Message"
+<jsp:useBean id="user" class="sample.tomcat.jsp.Message"
 	scope="request" />
 <!DOCTYPE html>
 <html lang="en">

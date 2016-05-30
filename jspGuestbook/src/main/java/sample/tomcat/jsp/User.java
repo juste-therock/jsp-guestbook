@@ -80,7 +80,13 @@ public class User implements Serializable{
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", eMail=" + eMail + ", sex=" + sex + "]";
+	}
 	
 
+	
 }
